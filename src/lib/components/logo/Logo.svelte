@@ -1,0 +1,1 @@
+<div class="w-[35px] h-[35px] rounded-full bg-primary"></div>

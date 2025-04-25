@@ -1,3 +1,46 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/forms'
+@plugin '@tailwindcss/forms';
+
+@theme inline {
+    --color-primary: var(--color-blue-500);
+    --color-primary-hover: var(--color-emerald-500);
+    --color-secondary: var(--color-emerald-500);
+
+    --color-background: var(--color-neutral-100);
+    --color-background-dark: var(--color-neutral-700);
+    --color-background-field: var(--color-neutral-300);
+    --color-background-field-dark: var(--color-neutral-800);
+    --color-text: var(--color-background-dark);
+    --color-text-dark: var(--color-background);
+}
+
+@layer components{
+    .cta-btn
+    {
+        @apply px-6 py-3 bg-primary text-white font-semibold hover:bg-primary-hover md:hover:cursor-pointer transition disabled:opacity-50
+    }
+
+    .gemini-btn{
+        @apply px-6 py-3 bg-linear-to-r from-primary to-secondary rounded-full shadow-md shadow-primary/60 text-white font-semibold md:hover:cursor-pointer transition disabled:opacity-50
+    }
+
+    .cookie-btn{
+        @apply fixed bottom-6 left-6 size-12 bg-background dark:bg-background-dark flex justify-center items-center rounded-full hover:bg-primary transition-all md:cursor-pointer
+    }
+
+    .cookie-banner-btn{
+        @apply px-6 py-3 text-sm border border-text dark:border-text-dark hover:border-primary hover:text-primary md:hover:cursor-pointer transition-all disabled:opacity-50
+    }
+    .form-field{
+        @apply p-3 block w-full bg-background-field border-transparent sm:text-sm focus:border-primary disabled:opacity-50 disabled:pointer-events-none dark:bg-background-field-dark
+    }
+    .background {
+        @apply bg-background dark:bg-background-dark text-text dark:text-text-dark
+    }
+}
+
+
+body{
+    @apply bg-background dark:bg-background-dark text-text dark:text-text-dark
+}
